@@ -31,7 +31,7 @@ public class LoginTests extends Base
 	@Test
 	public void LoginWithValidCredential()
 	{
-		
+		System.out.println("valid Details");
 		login.setInputusername(login.getUsername());
 		login.setInputpassword(login.getPassword());
 		login.ClickOnLoginButton();
