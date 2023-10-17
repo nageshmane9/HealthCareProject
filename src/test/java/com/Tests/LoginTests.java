@@ -2,6 +2,7 @@ package com.Tests;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -12,12 +13,14 @@ import com.pom.LoginPage;
 public class LoginTests extends Base
 {
 	
-	LoginPage login= new LoginPage();
+	LoginPage login;
 	
 	@BeforeMethod
 	public void SetUp() throws IOException 
 	{
+		
 		LaunchTheWeb();
+		login= new LoginPage();
 		
 	}
 	
@@ -28,14 +31,54 @@ public class LoginTests extends Base
 		driver.quit();
 	}
 	
+	
 	@Test
-	public void LoginWithValidCredential()
+	public void LoginWithValidCredential() throws InterruptedException
 	{
-		System.out.println("valid Details");
+		
 		login.setInputusername(login.getUsername());
+		Thread.sleep(2000);
+		System.out.println(login.getPassword());
 		login.setInputpassword(login.getPassword());
+		Thread.sleep(2000);
 		login.ClickOnLoginButton();
+		Thread.sleep(2000);
+		
+		String actual = driver.getTitle();
+		String expected=prop.getProperty("Logintitle");
+		
+		Assert.assertEquals(actual,expected);
+	}
+	
+	
+	@Test (groups="Sanity")
+	public void ValidateTitle()
+	{
+		String actual = driver.getTitle();
+		String expected=prop.getProperty("Logintitle");
+		
+		Assert.assertEquals(actual,expected);
+	}
+	
+	
+	@Test (groups="Sanity")
+	public void validateLogo()
+	{
+		boolean Actual =login.Logo();
+		
+		Assert.assertTrue(Actual);      //Validation
+	}
+	
+	
+	@Test
+	public void ValidateURL()
+	{
+		String actual =driver.getCurrentUrl();
+		String expected= prop.getProperty("WebUrl");
+		
+		Assert.assertEquals(actual, expected);   //Validation
 		
 	}
+	
    
 }

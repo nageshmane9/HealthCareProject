@@ -13,10 +13,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.utilities.Utility;
+
 public class Base 
 {
 	FileInputStream fileinputstream;
 	public static WebDriver driver;
+	public Properties prop;
 	
 	public static String projectpath= System.getProperty("user.dir"); 
 	
@@ -29,7 +32,7 @@ public class Base
 		 driver.manage().window().maximize();
 		 driver.manage().deleteAllCookies();
 		 
-		 Properties prop= new Properties();
+		prop= new Properties();
 		 
 		 prop.load(fileinputstream);
 		 
@@ -37,15 +40,11 @@ public class Base
 		 
 		 driver.get(prop.getProperty("WebUrl"));
 		 
+		 Utility.Implicitlywait();
+		 
 	 }
 	 
-	 public void WaitForVisibility( String e)
-		{
-			WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
-			  wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(e)));
-		}
-	 
-	 
+		 
 	 
 	
 	

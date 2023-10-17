@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.base.Base;
+import com.utilities.Utility;
 
 public class LoginPage extends Base
 {
@@ -18,20 +19,22 @@ public class LoginPage extends Base
 	@FindBy(name="username") private WebElement inputusername;
 	@FindBy(name="password") private WebElement inputpassword;
 	@FindBy(xpath="//button[@type='submit']") private WebElement LoginButton;
-	
+	@FindBy(xpath="//p[text()='Forgot your password? ']") private WebElement forgotpasswordlink;
+	@FindBy(xpath="//img[@alt='company-branding']") private WebElement logo;
 	
      public String getUsername()
      {
-    	WaitForVisibility("//p[text()='Username : Admin']");
     	
-    	 return username.getText();
+    	String a= username.getText();
+    	 return a.substring(a.indexOf('A')); 
     	 
-    	
      }
      
      public String getPassword()
      {
-    	 return password.getText();
+    	
+    	 String a=password.getText();
+    	 return a.substring(11);
      }
      
      public void ClickOnLoginButton()
@@ -47,6 +50,20 @@ public class LoginPage extends Base
 	
 	public void setInputpassword(String Setpassword) {
 		 inputpassword.sendKeys(Setpassword);
+	}
+	
+	
+	public boolean Logo()
+	{
+		Utility.WaitForVisibility("//img[@alt='company-branding']");
+		boolean a=logo.isDisplayed();
+		System.out.println(a);
+		return a;
+	}
+	
+	public void ClickOnforgotpasswordLink()
+	{
+		forgotpasswordlink.click();
 	}
      
      
