@@ -2,27 +2,24 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-16T12:35:20 IST" name="Default suite" finished-at="2023-10-16T12:35:44 IST" duration-ms="24151">
+  <suite started-at="2023-10-19T17:26:40 IST" name="Default suite" finished-at="2023-10-19T17:27:03 IST" duration-ms="22382">
     <groups>
     </groups>
-    <test started-at="2023-10-16T12:35:20 IST" name="Default test" finished-at="2023-10-16T12:35:44 IST" duration-ms="24151">
-      <class name="com.Tests.LoginTests">
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.Tests.LoginTests@413d1baf]" started-at="2023-10-16T12:35:20 IST" name="SetUp" finished-at="2023-10-16T12:35:42 IST" duration-ms="22498" status="PASS">
+    <test started-at="2023-10-19T17:26:40 IST" name="Default test" finished-at="2023-10-19T17:27:03 IST" duration-ms="22382">
+      <class name="com.Tests.LoginTestsExelData">
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:com.Tests.LoginTestsExelData@53aac487]" started-at="2023-10-19T17:26:40 IST" name="SetUp" finished-at="2023-10-19T17:27:01 IST" duration-ms="20513" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method signature="LoginWithValidCredential()[pri:0, instance:com.Tests.LoginTests@413d1baf]" started-at="2023-10-16T12:35:42 IST" name="LoginWithValidCredential" finished-at="2023-10-16T12:35:43 IST" duration-ms="1154" status="FAIL">
-          <exception class="java.lang.NullPointerException">
+        <test-method signature="LoginWithExelData()[pri:0, instance:com.Tests.LoginTestsExelData@53aac487]" started-at="2023-10-19T17:27:01 IST" name="LoginWithExelData" finished-at="2023-10-19T17:27:02 IST" duration-ms="1096" status="FAIL">
+          <exception class="java.lang.ClassCastException">
             <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null]]>
+              <![CDATA[class java.util.HashMap$EntrySet cannot be cast to class java.util.Map$Entry (java.util.HashMap$EntrySet and java.util.Map$Entry are in module java.base of loader 'bootstrap')]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy11.getText(Unknown Source)
-at com.pom.LoginPage.getUsername(LoginPage.java:27)
-at com.Tests.LoginTests.LoginWithValidCredential(LoginTests.java:35)
+              <![CDATA[java.lang.ClassCastException: class java.util.HashMap$EntrySet cannot be cast to class java.util.Map$Entry (java.util.HashMap$EntrySet and java.util.Map$Entry are in module java.base of loader 'bootstrap')
+at com.utilities.Utility.getAllData(Utility.java:73)
+at com.Tests.LoginTestsExelData.LoginWithExelData(LoginTestsExelData.java:71)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -53,15 +50,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- java.lang.ClassCastException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LoginWithValidCredential -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.Tests.LoginTests@413d1baf]" started-at="2023-10-16T12:35:43 IST" name="tearDown" finished-at="2023-10-16T12:35:44 IST" duration-ms="450" status="PASS">
+        </test-method> <!-- LoginWithExelData -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.Tests.LoginTestsExelData@53aac487]" started-at="2023-10-19T17:27:02 IST" name="tearDown" finished-at="2023-10-19T17:27:03 IST" duration-ms="692" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.Tests.LoginTests -->
+      </class> <!-- com.Tests.LoginTestsExelData -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

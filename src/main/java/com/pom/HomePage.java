@@ -1,28 +1,49 @@
 package com.pom;
 
-import java.time.Duration;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.By.ByXPath;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class HomePage 
+import com.base.Base;
+
+public class HomePage extends Base
 {
 
-	public static void main(String[] args) {
-		
-		WebDriver driver= new ChromeDriver();
-		
-		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-		
-		WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(12));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[text()='Username : Admin']")));
-		WebElement username= driver.findElement(By.xpath("//p[text()='Username : Admin']"));
-		
-		System.out.println(username.getText());
+	{
+		PageFactory.initElements(driver,this);
 	}
+	
+	
+	@FindBy(xpath="//img[@alt='client brand banner']") private WebElement LogoBanner;
+	@FindBy(xpath="//input[@fdprocessedid='ruwi0k']") private WebElement SearchInput;
+	@FindBy(xpath="//span[text()='Admin']") private WebElement Admin_Module;
+	@FindBy(xpath="//span[text()='PIM']") private WebElement PIM_Module;
+	
+	@FindBy(xpath="//span[text()='Leave']") private WebElement Leave_Module;
+	@FindBy(xpath="//span[text()='Time']") private WebElement Time_Module;
+	@FindBy(xpath="//span[text()='Recruitment']") private WebElement Recruitment_Module;
+	
+	@FindBy(xpath="//span[text()='My Info']") private WebElement MyInfo_Module;
+	@FindBy(xpath="//span[text()='Performance']") private WebElement Performance_Module;
+	@FindBy(xpath="//span[text()='Dashboard']") private WebElement Dashboard_Module;
+	@FindBy(xpath="//span[text()='Directory']") private WebElement Directory_Module;
+	
+	@FindBy(xpath="//span[text()='Maintenance']") private WebElement Maintenance_Module;
+	@FindBy(xpath="//span[text()='Claim']") private WebElement Claim_Module;
+	@FindBy(xpath="//span[text()='Buzz']") private WebElement Buzz_Module;
+	
+	
+	public boolean ValidateHomeLogo()
+	{
+		return LogoBanner.isDisplayed();
+	}
+	
+	
+	public void ClickOnPIM_Module()
+	{
+		PIM_Module.click();
+	}
+	
+	
+	
 }

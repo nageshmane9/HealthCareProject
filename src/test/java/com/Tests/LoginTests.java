@@ -79,6 +79,19 @@ public class LoginTests extends Base
 		Assert.assertEquals(actual, expected);   //Validation
 		
 	}
+	@Test
+	public void validateForgotpasswordLink()
+	{
+		
+		login.ClickOnforgotpasswordLink();
+		String Actual=driver.getCurrentUrl();
+		System.out.println(Actual);
+		String expected=prop.getProperty("ForgotPasswordLink");
+		
+		Assert.assertEquals(Actual, expected);
+		
+		
+	}
 	
    
 }

@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import org.apache.poi.EncryptedDocumentException;
 
@@ -28,6 +29,7 @@ public class Utility extends Base
 		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		  
 	 }
+	 
 	public static Sheet getsheet(String sheetname) throws IOException
 	{
 		FileInputStream fileinputstream = new FileInputStream(projectpath+"\\src\\main\\resources\\Exeldata\\OrangeHrmLogin.xlsx");
@@ -36,49 +38,39 @@ public class Utility extends Base
 		return sh;
 	}
 	
-	public static void getSingleData(int rowNum,int cellNum,Sheet sh)
+	public static Object getSingleData(int rowNum,int cellNum,Sheet sh)
 	{
 		if(sh.getRow(rowNum).getCell(cellNum).getCellType().toString().equalsIgnoreCase("string"))
-			sh.getRow(rowNum).getCell(cellNum).getStringCellValue();
-		else
-			sh.getRow(rowNum).getCell(cellNum).getNumericCellValue();
-			
+		{
+			String ab=sh.getRow(rowNum).getCell(cellNum).getStringCellValue();
+			System.out.println(ab);
+			return ab;
+		}
+		else {
+			double ab=sh.getRow(rowNum).getCell(cellNum).getNumericCellValue();
+			return ab;
+		}		
 	}
 	
-	public static void getAllData(String sheetname) throws IOException
+	public static void getAllData(Sheet sh) throws IOException
 	{
 		
-FileInputStream fileinputstream = new FileInputStream(projectpath+"\\src\\main\\resources\\Exeldata\\OrangeHrmLogin.xlsx");
-		
-		Sheet sh=WorkbookFactory.create(fileinputstream).getSheet(sheetname);
-		
-		HashMap<String,String> map = new HashMap();
+
+		HashMap<Object,Object> map = new HashMap();
 		
 		for(int i=0;i<=sh.getLastRowNum();i++)
 		{
 			int cellNum = sh.getRow(i).getLastCellNum();
 			
-				String a=sh.getRow(i).getCell(0).getStringCellValue();
-				String b=sh.getRow(i).getCell(1).getStringCellValue();
+				Object a=sh.getRow(i).getCell(0).getStringCellValue();
+				Object b=sh.getRow(i).getCell(1).getStringCellValue();
 				
 				map.put(a, b);
 			
 		}
-		
 		System.out.println(map);
 		
-          System.out.println(map.keySet());
-          
-          map.values();
-          
-        Iterator <Entry<String,String> > iterator= map.entrySet().iterator();
-        
-        while(iterator.hasNext())
-        {
-        	Map.Entry<String,String> ab=(Map.Entry<String, String>)iterator.next();
-        	
-        	System.out.println(ab.getKey()+" "+ab.getValue());
-        }
+			
 	}
 	 
 	 
@@ -96,13 +88,7 @@ FileInputStream fileinputstream = new FileInputStream(projectpath+"\\src\\main\\
 	 }
 	 
 	 
-	 public static void main(String[] args) throws IOException 
-	 {
-		 getAllData("Login");
-		 
-		
-	 }
-
+	
 	 
 	
 }

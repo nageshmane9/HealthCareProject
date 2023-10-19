@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Oct 16 12:35:20 IST 2023</td>
+<td>Started on:</td><td>Thu Oct 19 17:26:40 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>24 seconds (24151 ms)</td>
+<tr><td>Total time:</td><td>22 seconds (22382 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,13 +76,10 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Tests.LoginTests.LoginWithValidCredential()'><b>LoginWithValidCredential</b><br>Test class: com.Tests.LoginTests</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy11.getText(Unknown Source)
-	at com.pom.LoginPage.getUsername(LoginPage.java:27)
-	at com.Tests.LoginTests.LoginWithValidCredential(LoginTests.java:35)
+<td title='com.Tests.LoginTestsExelData.LoginWithExelData()'><b>LoginWithExelData</b><br>Test class: com.Tests.LoginTestsExelData</td>
+<td><div><pre>java.lang.ClassCastException: class java.util.HashMap$EntrySet cannot be cast to class java.util.Map$Entry (java.util.HashMap$EntrySet and java.util.Map$Entry are in module java.base of loader &apos;bootstrap&apos;)
+	at com.utilities.Utility.getAllData(Utility.java:73)
+	at com.Tests.LoginTestsExelData.LoginWithExelData(LoginTestsExelData.java:71)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -111,13 +108,10 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace2134915053", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2134915053'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy11.getText(Unknown Source)
-	at com.pom.LoginPage.getUsername(LoginPage.java:27)
-	at com.Tests.LoginTests.LoginWithValidCredential(LoginTests.java:35)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1037572328", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1037572328'><pre>java.lang.ClassCastException: class java.util.HashMap$EntrySet cannot be cast to class java.util.Map$Entry (java.util.HashMap$EntrySet and java.util.Map$Entry are in module java.base of loader &apos;bootstrap&apos;)
+	at com.utilities.Utility.getAllData(Utility.java:73)
+	at com.Tests.LoginTestsExelData.LoginWithExelData(LoginTestsExelData.java:71)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -148,7 +142,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>1</td>
-<td>com.Tests.LoginTests@413d1baf</td></tr>
+<td>com.Tests.LoginTestsExelData@53aac487</td></tr>
 </table><p>
 </body>
 </html>

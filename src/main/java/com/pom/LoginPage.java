@@ -21,11 +21,13 @@ public class LoginPage extends Base
 	@FindBy(xpath="//button[@type='submit']") private WebElement LoginButton;
 	@FindBy(xpath="//p[text()='Forgot your password? ']") private WebElement forgotpasswordlink;
 	@FindBy(xpath="//img[@alt='company-branding']") private WebElement logo;
+	@FindBy(xpath="//p[text()='Invalid credentials']") WebElement InvalidcredentialsMessage;
 	
      public String getUsername()
      {
     	
     	String a= username.getText();
+    	System.out.println(a);
     	 return a.substring(a.indexOf('A')); 
     	 
      }
@@ -43,12 +45,14 @@ public class LoginPage extends Base
      }
 
 	
-	public void setInputusername(String Setusername) {
+	public void setInputusername(String Setusername) 
+	{
 		 inputusername.sendKeys(Setusername);
 	}
 
 	
-	public void setInputpassword(String Setpassword) {
+	public void setInputpassword(String Setpassword) 
+	{
 		 inputpassword.sendKeys(Setpassword);
 	}
 	
@@ -64,6 +68,12 @@ public class LoginPage extends Base
 	public void ClickOnforgotpasswordLink()
 	{
 		forgotpasswordlink.click();
+	}
+	
+	public boolean InvalidMessage()
+	{
+		return InvalidcredentialsMessage.isDisplayed();
+		
 	}
      
      
