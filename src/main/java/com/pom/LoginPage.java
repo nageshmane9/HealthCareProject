@@ -22,6 +22,7 @@ public class LoginPage extends Base
 	@FindBy(xpath="//p[text()='Forgot your password? ']") private WebElement forgotpasswordlink;
 	@FindBy(xpath="//img[@alt='company-branding']") private WebElement logo;
 	@FindBy(xpath="//p[text()='Invalid credentials']") WebElement InvalidcredentialsMessage;
+	@FindBy(xpath="//span[text()='Required']") private WebElement RequiredFieldMessage;
 	
      public String getUsername()
      {
@@ -74,6 +75,11 @@ public class LoginPage extends Base
 	{
 		return InvalidcredentialsMessage.isDisplayed();
 		
+	}
+	
+	public boolean RequiredErrorMessage()
+	{
+		return RequiredFieldMessage.isDisplayed();
 	}
      
      

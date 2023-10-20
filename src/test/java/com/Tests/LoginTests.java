@@ -1,6 +1,7 @@
 package com.Tests;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -16,11 +17,12 @@ public class LoginTests extends Base
 	LoginPage login;
 	
 	@BeforeMethod
-	public void SetUp() throws IOException 
+	public void SetUp(Method m) throws IOException 
 	{
 		
 		LaunchTheWeb();
 		login= new LoginPage();
+	System.out.println("*****TestName****"+m.getName());	
 		
 	}
 	
@@ -47,11 +49,21 @@ public class LoginTests extends Base
 		String actual = driver.getTitle();
 		String expected=prop.getProperty("Logintitle");
 		
-		Assert.assertEquals(actual,expected);
+		Assert.assertEquals(actual,expected); 
 	}
 	
+	public void LoginWithBlanckCredential()
+	{
+		login.setInputusername(" ");
+		login.setInputpassword(" ");
+		login.ClickOnLoginButton();
+		
+		boolean actual=login.RequiredErrorMessage();
+		
+		Assert.assertTrue(actual);
+	}
 	
-	@Test (groups="Sanity")
+	@Test 
 	public void ValidateTitle()
 	{
 		String actual = driver.getTitle();
@@ -61,7 +73,7 @@ public class LoginTests extends Base
 	}
 	
 	
-	@Test (groups="Sanity")
+	@Test 
 	public void validateLogo()
 	{
 		boolean Actual =login.Logo();
@@ -89,8 +101,7 @@ public class LoginTests extends Base
 		String expected=prop.getProperty("ForgotPasswordLink");
 		
 		Assert.assertEquals(Actual, expected);
-		
-		
+			
 	}
 	
    

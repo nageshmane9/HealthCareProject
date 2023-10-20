@@ -38,7 +38,7 @@ LoginPage login;
 	
 	
 	@Test
-	public void LoginWithCredential() throws InterruptedException, IOException
+	public void LoginWithSingleExelCredential() throws InterruptedException, IOException
 	{
 		Sheet sh=Utility.getsheet("Login");
 		
@@ -57,13 +57,12 @@ LoginPage login;
 		
 		Assert.assertTrue(actual);
 		
-		
-		
+	
 	}
 	
     
 	@Test
-	public void LoginWithExelData() throws InterruptedException, IOException
+	public void LoginWithAllExelData() throws InterruptedException, IOException
 	{
 		Sheet sh=	Utility.getsheet("Login");
 		

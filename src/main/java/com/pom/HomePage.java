@@ -32,6 +32,8 @@ public class HomePage extends Base
 	@FindBy(xpath="//span[text()='Claim']") private WebElement Claim_Module;
 	@FindBy(xpath="//span[text()='Buzz']") private WebElement Buzz_Module;
 	
+	@FindBy(xpath="//i[@class='oxd-icon bi-chevron-left']") private WebElement LeftArrow;
+	
 	
 	public boolean ValidateHomeLogo()
 	{
@@ -39,9 +41,29 @@ public class HomePage extends Base
 	}
 	
 	
-	public void ClickOnPIM_Module()
+	public boolean ClickOnPIM_Module()
 	{
 		PIM_Module.click();
+		
+		System.out.println("Clicked on the PIM Module");
+		return PIM_Module.isEnabled();
+	}
+	
+	public boolean PIM_Module()
+	{
+	
+		return PIM_Module.isDisplayed();
+	}
+	
+	
+	public void ClickOnLeftArrow()
+	{
+		if(LeftArrow.isDisplayed()&&LeftArrow.isEnabled())
+		{
+			LeftArrow.click();
+		}
+		
+	
 	}
 	
 	
