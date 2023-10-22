@@ -29,6 +29,5 @@ public class PIM extends Base
 	@FindBy(xpath="//button[text()=' Search ']") private WebElement SearchButton;
 	@FindBy(xpath="//button[text()=' Add ']") private WebElement AddButton;
 	
-
 	
 }

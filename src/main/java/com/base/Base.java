@@ -18,7 +18,9 @@ import com.utilities.Utility;
 public class Base 
 {
 	FileInputStream fileinputstream;
+	
 	public static WebDriver driver;
+	
 	public Properties prop;
 	
 	public static String projectpath= System.getProperty("user.dir"); 

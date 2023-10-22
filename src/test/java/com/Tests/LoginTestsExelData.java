@@ -1,6 +1,7 @@
 package com.Tests;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -21,11 +22,12 @@ public class LoginTestsExelData   extends Base
 LoginPage login;
 	
 	@BeforeMethod
-	public void SetUp() throws IOException 
+	public void SetUp(Method m) throws IOException 
 	{
 		
 		LaunchTheWeb();
 		login= new LoginPage();
+		System.out.println("***TestName***"+m.getName());
 		
 	}
 	
@@ -52,12 +54,12 @@ LoginPage login;
 		Thread.sleep(2000);
 		login.ClickOnLoginButton();
 		
-		boolean actual=login.InvalidMessage();
+		String actual=login.InvalidCredentialsMessage();
 		System.out.println(actual);
+		String expected=prop.getProperty("LoginWithInvalidCred");
 		
-		Assert.assertTrue(actual);
+		Assert.assertEquals(actual, expected);
 		
-	
 	}
 	
     

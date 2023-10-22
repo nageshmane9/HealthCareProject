@@ -73,4 +73,12 @@ public class HomePageTests extends Base
 	
 	}
 	
+	@Test
+	public void Srearch() throws InterruptedException
+	{
+	     
+		home.sea("Ad");
+	
+	}
+	
 }

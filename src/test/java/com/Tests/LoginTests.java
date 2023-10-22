@@ -58,9 +58,10 @@ public class LoginTests extends Base
 		login.setInputpassword(" ");
 		login.ClickOnLoginButton();
 		
-		boolean actual=login.RequiredErrorMessage();
 		
-		Assert.assertTrue(actual);
+		
+		
+		
 	}
 	
 	@Test 

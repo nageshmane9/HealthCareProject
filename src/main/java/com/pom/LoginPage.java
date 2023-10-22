@@ -22,7 +22,10 @@ public class LoginPage extends Base
 	@FindBy(xpath="//p[text()='Forgot your password? ']") private WebElement forgotpasswordlink;
 	@FindBy(xpath="//img[@alt='company-branding']") private WebElement logo;
 	@FindBy(xpath="//p[text()='Invalid credentials']") WebElement InvalidcredentialsMessage;
-	@FindBy(xpath="//span[text()='Required']") private WebElement RequiredFieldMessage;
+	
+	@FindBy(xpath="//span[text()='Required']") private WebElement RequiredFieldMessageOfUsername;
+	@FindBy(xpath="(//span[text()='Required'])[2]") private WebElement RequiredFieldMessageOfPassword;
+	
 	
      public String getUsername()
      {
@@ -66,22 +69,47 @@ public class LoginPage extends Base
 		return a;
 	}
 	
-	public void ClickOnforgotpasswordLink()
+	
+	public boolean ClickOnforgotpasswordLink()
 	{
-		forgotpasswordlink.click();
+		if(forgotpasswordlink.isDisplayed() && forgotpasswordlink.isDisplayed())
+		{
+			forgotpasswordlink.click();
+		}
+		 return forgotpasswordlink.isEnabled();
 	}
 	
-	public boolean InvalidMessage()
+	
+	public String InvalidCredentialsMessage()
 	{
-		return InvalidcredentialsMessage.isDisplayed();
+		if(InvalidcredentialsMessage.isDisplayed())
+		{
+			System.out.println("Invalid Credentials message is displayed");
+		}
+		
+		return InvalidcredentialsMessage.getText();
 		
 	}
 	
-	public boolean RequiredErrorMessage()
+	
+	public String RequiredErrorMessageforUsername()
 	{
-		return RequiredFieldMessage.isDisplayed();
+		if(RequiredFieldMessageOfUsername.isDisplayed())
+		{
+			System.out.println("Required message is displayed");
+		}
+		return RequiredFieldMessageOfUsername.getText();
 	}
      
+	
+	public String RequiredErrorMessageforPassword()
+	{
+		if(RequiredFieldMessageOfPassword.isDisplayed())
+		{
+			System.out.println("Required message is displayed");
+		}
+		return RequiredFieldMessageOfPassword.getText();
+	}
      
 	
 	
