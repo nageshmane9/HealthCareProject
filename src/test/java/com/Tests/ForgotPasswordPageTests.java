@@ -13,7 +13,7 @@ import com.pom.LoginPage;
 public class ForgotPasswordPageTests extends Base
 {
 
-	ForgotPasswordPage ob;
+	ForgotPasswordPage FPP;
 	LoginPage login;
 	
 	@BeforeMethod
@@ -21,8 +21,8 @@ public class ForgotPasswordPageTests extends Base
 	{
 		LaunchTheWeb();
 		login =new LoginPage();
-		 ob= new 	ForgotPasswordPage();
-		login.ClickOnforgotpasswordLink();
+	 FPP=	login.ClickOnforgotpasswordLink();     // Linking page // here return the ForgotPassowordpage when it clicked on forgot passoword link
+		
 	}
 	
 	@AfterMethod
@@ -34,10 +34,10 @@ public class ForgotPasswordPageTests extends Base
 	@Test
 	public void enterValidEmail() throws InterruptedException
 	{
-		login.ClickOnforgotpasswordLink();
+	
+		FPP.EnterUsername("Admin1234");
 		Thread.sleep(2000);
-		ob.EnterUsername("Admin1234");
-		ob.ClickOnCancelButton();
+		FPP.ClickOnCancelButton();
 	}
 	
 	

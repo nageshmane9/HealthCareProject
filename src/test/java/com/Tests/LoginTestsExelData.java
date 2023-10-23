@@ -56,7 +56,7 @@ LoginPage login;
 		
 		String actual=login.InvalidCredentialsMessage();
 		System.out.println(actual);
-		String expected=prop.getProperty("LoginWithInvalidCred");
+		String expected=prop.getProperty("LoginWithInvalidCredMessage");
 		
 		Assert.assertEquals(actual, expected);
 		
@@ -69,9 +69,6 @@ LoginPage login;
 		Sheet sh=	Utility.getsheet("Login");
 		
 		Utility.getAllData(sh);
-	
-	   
-	
 		
 	}
 }

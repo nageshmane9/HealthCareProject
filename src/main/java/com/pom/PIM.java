@@ -1,19 +1,24 @@
 package com.pom;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import com.base.Base;
 
 public class PIM extends Base
 {
-      
+    LoginPage login;  
 	{
 		PageFactory.initElements(driver,this);
 	}
 	
-	@FindBy(xpath="//span[text()='Configuration ']") private WebElement ConfigurationDropDown;
+	@FindBy(xpath="//span[text()='Configuration ']/i[@class='oxd-icon bi-chevron-down']") private WebElement ConfigurationDropDown;
 	@FindBy(xpath="//li/a[text()='Employee List']") private WebElement EmployeeListTab;
 	@FindBy(xpath="//a[text()='Add Employee']") private WebElement AddEmployeeTab;
 	@FindBy(xpath="//a[text()='Reports']") private WebElement RepotsTab;
@@ -30,4 +35,19 @@ public class PIM extends Base
 	@FindBy(xpath="//button[text()=' Add ']") private WebElement AddButton;
 	
 	
+	public void ClickOnConfigurationDropDown()
+	{
+		System.out.println("here");
+		
+		ConfigurationDropDown.click();
+				
+	}
+
+	
+	
+	
+	
+	
 }
+
+       

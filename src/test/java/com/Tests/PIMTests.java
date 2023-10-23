@@ -15,35 +15,36 @@ public class PIMTests extends Base
 {
 	PIM object;
 	LoginPage login;
-	HomePage home;
+	
 	
 	@BeforeMethod
 	public void SetUp() throws IOException
 	{
-		LaunchTheWeb();
-		login = new LoginPage();
-		object = new PIM();
-		 home = new HomePage();
+		
+	 	   LaunchTheWeb();
+	 	   login = new LoginPage();
+	 	 
+	 	   login.setInputusername(login.getUsername());
+	 	   login.setInputpassword(login.getPassword());
+	 	  HomePage  home=login.ClickOnLoginButton();       // linking the page
+	 	   home.ClickOnPIM_Module();                
+	 	   object = new PIM();
+	 	   
 	}
 	
 	@AfterMethod
 	public void tearDown()
 	{
 		driver.quit();
+		
 	}
 	
 	@Test
 	public void test1() throws InterruptedException
 	{
-		login.setInputusername(login.getUsername());
-		Thread.sleep(2000);
-		login.setInputpassword(login.getPassword());
-		login.ClickOnLoginButton();
-		Thread.sleep(2000);
-		home.ClickOnPIM_Module();
+		object.ClickOnConfigurationDropDown();
 		
-		
-		
+   
 	}
 	
 

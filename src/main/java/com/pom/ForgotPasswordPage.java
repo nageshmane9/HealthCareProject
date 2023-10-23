@@ -21,7 +21,7 @@ public class ForgotPasswordPage extends Base
 	
 	public void EnterUsername(String text)
 	{
-		Utility.WaitForVisibility("/input[@name='username']");
+		Utility.WaitForVisibility("//input[@name='username']");
 		username.sendKeys(text);
 		System.out.println("Entered username");
 	}
@@ -29,7 +29,7 @@ public class ForgotPasswordPage extends Base
 	public void ClickOnCancelButton()
 	{
 		cancelButton.click();
-		System.out.println("Clicked on cacel button");
+		System.out.println("Clicked on cancel button");
 	}
 	
 	public void ClickonResetPassword()
