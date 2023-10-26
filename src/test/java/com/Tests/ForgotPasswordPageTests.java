@@ -15,7 +15,7 @@ import com.pom.LoginPage;
 
 public class ForgotPasswordPageTests extends Base
 {
-    SoftAssert soft;
+    SoftAssert soft = new SoftAssert();
 	ForgotPasswordPage FPP;
 	LoginPage login;
 	
@@ -24,9 +24,8 @@ public class ForgotPasswordPageTests extends Base
 	{
 		LaunchTheWeb();
 		login =new LoginPage();
-		soft = new SoftAssert();
 	    System.out.println("***TestName--"+m.getName());
-	 FPP=login.ClickOnforgotpasswordLink();             // Linking page // here return the ForgotPassowordpage when it clicked on forgot passoword link
+	      FPP=login.ClickOnforgotpasswordLink();             // Linking page // here return the ForgotPassowordpage when it clicked on forgot passoword link
 		
 	
 	}
@@ -42,7 +41,7 @@ public class ForgotPasswordPageTests extends Base
 	public void ValidateForgotPasswordURL()
 	{
 		String actual=driver.getCurrentUrl();
-		                     System.out.println("ForgotpasscurrentURL-"+actual);
+		System.out.println("ForgotpasscurrentURL-"+actual);
 		String expected =prop.getProperty("ForgotpasswordPageURL");
 		
 		Assert.assertEquals(actual, expected);

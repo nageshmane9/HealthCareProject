@@ -1,6 +1,7 @@
 package com.Tests;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -22,10 +23,11 @@ public class HomePageTests extends Base
 
 	
 	@BeforeMethod
-	public void SetUp() throws IOException
+	public void SetUp(Method m) throws IOException
 	{
 		LaunchTheWeb();
 		login = new LoginPage();
+		System.out.println("*****TestName****"+m.getName());
 		login.setInputusername(login.getUsername());
 		login.setInputpassword(login.getPassword());
 	    home=login.ClickOnLoginButton();
@@ -172,8 +174,7 @@ public class HomePageTests extends Base
 	    String expected=prop.getProperty("Directory_Module_URL");
 	    
 	    Assert.assertEquals(actual1, expected);
-	  
-	    
+	     
 	}
 	
 	@Test
@@ -185,8 +186,7 @@ public class HomePageTests extends Base
 	    String expected=prop.getProperty("Maintenance_Module_URL");
 	    
 	    Assert.assertEquals(actual1, expected);
-	   
-	    
+	      
 	}
 	
 	@Test
@@ -253,6 +253,7 @@ public class HomePageTests extends Base
 	public void ValidateProfileAboutFuctionality()
 	{
 	  boolean actual=	home.SelectProfileTabsForValidateAbout();
+	  
 		String a=home.AboutDetails();
 		System.out.println(a);
 		
@@ -260,9 +261,10 @@ public class HomePageTests extends Base
 	}
 	
 	@Test
-	public void ValidateProfileSupportFuctionality()
+	public void ValidateProfileSupportFunctionality()
 	{
 	 	home.SelectProfileTabsForValidateSupport();
+	 	
 		String actual=driver.getCurrentUrl();
 		System.out.println(actual);
 		String expected=prop.getProperty("Support_URL");
@@ -271,7 +273,7 @@ public class HomePageTests extends Base
 	}
 	
 	@Test
-	public void ValidateProfileChangePasswordFuctionality()
+	public void ValidateProfileChangePasswordFunctionality()
 	{
 	 	home.SelectProfileTabsForValidateChangePassword();
 		String actual=driver.getCurrentUrl();
@@ -282,7 +284,7 @@ public class HomePageTests extends Base
 	}
 	
 	@Test
-	public void ValidateProfileLogoutFuctionality()
+	public void ValidateProfileLogoutFunctionality()
 	{
 	 	home.SelectProfileTabsForValidateLogout();
 		String actual=driver.getCurrentUrl();

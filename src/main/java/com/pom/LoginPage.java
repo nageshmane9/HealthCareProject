@@ -1,5 +1,8 @@
 package com.pom;
 
+import java.util.ArrayList;
+import java.util.Set;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -27,6 +30,12 @@ public class LoginPage extends Base
 	@FindBy(xpath="//span[text()='Required'][1]") private WebElement RequiredFieldMessageOfUsername;
 	@FindBy(xpath="//span[text()='Required']") private WebElement RequiredFieldMessageOfPassword;
 	
+	@FindBy(xpath="//p[text()='OrangeHRM OS 5.5']") private WebElement WebApplicationVersion;
+	@FindBy(xpath="//p[@class='oxd-text oxd-text--p orangehrm-copyright'][2]") private WebElement CopyRightText ;
+	@FindBy(xpath="//a[@href='https://www.linkedin.com/company/orangehrm/mycompany/']") private WebElement LinkdnLinkIcon;
+	@FindBy(xpath="//a[@href='https://www.facebook.com/OrangeHRM/']") private WebElement FacebookLinkIcon;
+	@FindBy(xpath="//a[@href='https://twitter.com/orangehrm?lang=en']") private WebElement TwitterLinkIcon ;
+	@FindBy(xpath="//a[@href='https://www.youtube.com/c/OrangeHRMInc']") private WebElement YouTubeLinkIcon;
 	
      public String getUsername()
      {
@@ -131,6 +140,72 @@ public class LoginPage extends Base
 			System.out.println("Required message is displayed");
 	           
 		return ms;
+	}
+	
+	public String GetWebApplicationVersionText()
+	{
+		String a=WebApplicationVersion.getText();
+		System.out.println(a);
+		
+		return a;
+	}
+	
+	public String GetCopyRightText()
+	{
+		String a=CopyRightText.getText();
+		System.out.println(a);
+		return a;
+	}
+	
+	public boolean ClickOnLinkdnLinkIcon()
+	{
+		boolean cd=LinkdnLinkIcon.isDisplayed() && LinkdnLinkIcon.isEnabled();
+		LinkdnLinkIcon.click();
+		
+		Set<String> set= driver.getWindowHandles();
+		ArrayList<String> arr= new ArrayList(set);
+		String child=arr.get(1);
+		driver.switchTo().window(child);
+		
+		return cd;
+		
+	}
+	
+	public boolean ClickOnFacebookLinkIcon()
+	{
+		boolean cd=FacebookLinkIcon.isDisplayed() && FacebookLinkIcon.isEnabled();
+		FacebookLinkIcon.click();
+		Set<String> set= driver.getWindowHandles();
+		ArrayList<String> arr= new ArrayList(set);
+		String child=arr.get(1);
+		driver.switchTo().window(child);
+		
+		return cd;
+		
+	}
+	
+	public boolean ClickOnTwitterLinkIcon()
+	{
+		boolean cd= TwitterLinkIcon.isDisplayed() && TwitterLinkIcon.isEnabled();
+		TwitterLinkIcon.click();
+		Set<String> set= driver.getWindowHandles();
+		ArrayList<String> arr= new ArrayList(set);
+		String child=arr.get(1);
+		driver.switchTo().window(child);
+		
+		return cd;
+	}
+	
+	public boolean ClickOnYoutubeLinkIcon()
+	{
+		boolean cd= YouTubeLinkIcon.isDisplayed() && YouTubeLinkIcon.isEnabled();
+		YouTubeLinkIcon.click();
+		Set<String> set= driver.getWindowHandles();
+		ArrayList<String> arr= new ArrayList(set);
+		String child=arr.get(1);
+		driver.switchTo().window(child);
+		
+		return cd;
 	}
      
 	

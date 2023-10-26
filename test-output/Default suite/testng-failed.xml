@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.Tests.HomePageTests">
+      <class name="com.Tests.PIMTests">
         <methods>
-          <include name="SetUp"/>
+          <include name="ValidateSearchFunctionality"/>
           <include name="tearDown"/>
-          <include name="ValidateProfileAboutFuctionality"/>
+          <include name="SetUp"/>
         </methods>
-      </class> <!-- com.Tests.HomePageTests -->
+      </class> <!-- com.Tests.PIMTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

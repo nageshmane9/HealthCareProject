@@ -1,6 +1,7 @@
 package com.Tests;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -17,24 +18,22 @@ public class PIMTests extends Base
 	PIM pim;
 	LoginPage login;
 	
-	
 	@BeforeMethod
-	public void SetUp() throws IOException
+	public void SetUp(Method m) throws IOException
 	{
 	 	   LaunchTheWeb();
 	 	   login = new LoginPage();
-	 	 
+	 	  System.out.println("*****TestName****"+m.getName());
 	 	   login.setInputusername(login.getUsername());
 	 	   login.setInputpassword(login.getPassword());
-	 	  HomePage  home=login.ClickOnLoginButton();       // linking the page
-	 	       home.ClickOnPIMModule();                
-	 	   pim = new PIM();	   
+	 	  HomePage  home=login.ClickOnLoginButton();            // linking the page
+	 	   pim=    home.ClickOnPIMModule();                 	 	   
 	}
 	
 	@AfterMethod
 	public void tearDown()
 	{
-	     // driver.quit();
+	    //  driver.quit();
 		
 	}
 	
@@ -75,13 +74,24 @@ public class PIMTests extends Base
 	@Test
 	public void  ValidateSearchFunctionality() 
 	{
-		
-		pim.EnterEmployeeeName("John999181 Jacob999181 Smith999181");
-		pim.EnterEmployeeId("0024");
+		pim.EnterEmployeeeName("pravin kale");
+		pim.EnterEmployeeId("1222");
 		pim.SelectEmploymentStatus();
 		pim.SelectInclude();
 		pim.EnterSupervisorName();
+		pim.SelectSupervisorName(prop.getProperty("Name"));
 		pim.SelectJobTitle();
+		pim.SelectSubUnit();
+		pim.ClickOnSearchButton();
+		
+	}
+	
+	@Test
+	public void  ValidateAddFunctionality() 
+	{
+		pim.ClickOnAddButton();
+		
+		
 		
 	}
 	

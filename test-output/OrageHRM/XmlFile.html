@@ -1,0 +1,420 @@
+<html>
+<head>
+<title>TestNG:  XmlFile</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>XmlFile</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>49/2/0</td>
+</tr><tr>
+<td>Started on:</td><td>Thu Oct 26 19:58:30 IST 2023</td>
+</tr>
+<tr><td>Total time:</td><td>691 seconds (691624 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.Tests.LoginTests.ValidateTwitterLinkIcon()'><b>ValidateTwitterLinkIcon</b><br>Test class: com.Tests.LoginTests</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	expected [null] but found [https://twitter.com/orangehrm?lang=en]
+	at com.Tests.LoginTests.ValidateTwitterLinkIcon(LoginTests.java:277)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace266426100", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace266426100'><pre>java.lang.AssertionError: The following asserts failed:
+	expected [null] but found [https://twitter.com/orangehrm?lang=en]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at com.Tests.LoginTests.ValidateTwitterLinkIcon(LoginTests.java:277)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>3</td>
+<td>com.Tests.LoginTests@196a42c3</td></tr>
+<tr>
+<td title='com.Tests.LoginTests.ValidateYouTubeLinkIcon()'><b>ValidateYouTubeLinkIcon</b><br>Test class: com.Tests.LoginTests</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	expected [null] but found [https://twitter.com/orangehrm?lang=en]
+	at com.Tests.LoginTests.ValidateYouTubeLinkIcon(LoginTests.java:292)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace500058139", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace500058139'><pre>java.lang.AssertionError: The following asserts failed:
+	expected [null] but found [https://twitter.com/orangehrm?lang=en]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at com.Tests.LoginTests.ValidateYouTubeLinkIcon(LoginTests.java:292)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>3</td>
+<td>com.Tests.LoginTests@196a42c3</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.Tests.ForgotPasswordPageTests.ValidateResetPasswordButton()'><b>ValidateResetPasswordButton</b><br>Test class: com.Tests.ForgotPasswordPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.Tests.ForgotPasswordPageTests@54c5a2ff</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateLeftArrow()'><b>ValidateLeftArrow</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>1</td>
+<td>com.Tests.HomePageTests@4c60d6e9</td></tr>
+<tr>
+<td title='com.Tests.ForgotPasswordPageTests.ValidateCancelButton()'><b>ValidateCancelButton</b><br>Test class: com.Tests.ForgotPasswordPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.Tests.ForgotPasswordPageTests@54c5a2ff</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateRecruitment_Module()'><b>ValidateRecruitment_Module</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>2</td>
+<td>com.Tests.HomePageTests@4c60d6e9</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateLogo()'><b>ValidateLogo</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>1</td>
+<td>com.Tests.HomePageTests@4c60d6e9</td></tr>
+<tr>
+<td title='com.Tests.LoginTests.ValidateLogo()'><b>ValidateLogo</b><br>Test class: com.Tests.LoginTests</td>
+<td></td>
+<td>1</td>
+<td>com.Tests.LoginTests@196a42c3</td></tr>
+<tr>
+<td title='com.Tests.ForgotPasswordPageTests.ValidateResetPasswordWithBlankCredential()'><b>ValidateResetPasswordWithBlankCredential</b><br>Test class: com.Tests.ForgotPasswordPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.Tests.ForgotPasswordPageTests@54c5a2ff</td></tr>
+<tr>
+<td title='com.Tests.LoginTests.LoginWithInvalidUsernameValidPassword()'><b>LoginWithInvalidUsernameValidPassword</b><br>Test class: com.Tests.LoginTests</td>
+<td></td>
+<td>3</td>
+<td>com.Tests.LoginTests@196a42c3</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateMyInfo_Module()'><b>ValidateMyInfo_Module</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>3</td>
+<td>com.Tests.HomePageTests@4c60d6e9</td></tr>
+<tr>
+<td title='com.Tests.LoginTests.ValidateWebApplicationVersionText()'><b>ValidateWebApplicationVersionText</b><br>Test class: com.Tests.LoginTests</td>
+<td></td>
+<td>0</td>
+<td>com.Tests.LoginTests@196a42c3</td></tr>
+<tr>
+<td title='com.Tests.LoginTestsExelData.LoginCredential()'><b>LoginCredential</b><br>Test class: com.Tests.LoginTestsExelData<br>Parameters: {Username=admin@12, Password=Admin23}</td>
+<td></td>
+<td>2</td>
+<td>com.Tests.LoginTestsExelData@17f9d882</td></tr>
+<tr>
+<td title='com.Tests.ForgotPasswordPageTests.ValidateResetPasswordWithInvalidCredential()'><b>ValidateResetPasswordWithInvalidCredential</b><br>Test class: com.Tests.ForgotPasswordPageTests</td>
+<td></td>
+<td>2</td>
+<td>com.Tests.ForgotPasswordPageTests@54c5a2ff</td></tr>
+<tr>
+<td title='com.Tests.LoginTests.LoginWithBlankPassword()'><b>LoginWithBlankPassword</b><br>Test class: com.Tests.LoginTests</td>
+<td></td>
+<td>1</td>
+<td>com.Tests.LoginTests@196a42c3</td></tr>
+<tr>
+<td title='com.Tests.LoginTests.LoginWithBlanckCredential()'><b>LoginWithBlanckCredential</b><br>Test class: com.Tests.LoginTests</td>
+<td></td>
+<td>1</td>
+<td>com.Tests.LoginTests@196a42c3</td></tr>
+<tr>
+<td title='com.Tests.LoginTests.LoginWithInvalidCharacterCredentials()'><b>LoginWithInvalidCharacterCredentials</b><br>Test class: com.Tests.LoginTests</td>
+<td></td>
+<td>2</td>
+<td>com.Tests.LoginTests@196a42c3</td></tr>
+<tr>
+<td title='com.Tests.LoginTests.LoginWithValidCredential()'><b>LoginWithValidCredential</b><br>Test class: com.Tests.LoginTests</td>
+<td></td>
+<td>2</td>
+<td>com.Tests.LoginTests@196a42c3</td></tr>
+<tr>
+<td title='com.Tests.LoginTestsExelData.LoginCredential()'><b>LoginCredential</b><br>Test class: com.Tests.LoginTestsExelData<br>Parameters: {Username=member@gmail.com, Password=member98}</td>
+<td></td>
+<td>1</td>
+<td>com.Tests.LoginTestsExelData@17f9d882</td></tr>
+<tr>
+<td title='com.Tests.LoginTests.ValidateURL()'><b>ValidateURL</b><br>Test class: com.Tests.LoginTests</td>
+<td></td>
+<td>0</td>
+<td>com.Tests.LoginTests@196a42c3</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateProfileAboutFuctionality()'><b>ValidateProfileAboutFuctionality</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>3</td>
+<td>com.Tests.HomePageTests@4c60d6e9</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateAdmin_Module()'><b>ValidateAdmin_Module</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>1</td>
+<td>com.Tests.HomePageTests@4c60d6e9</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateLeave_Module()'><b>ValidateLeave_Module</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>3</td>
+<td>com.Tests.HomePageTests@4c60d6e9</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateDirectory_Module()'><b>ValidateDirectory_Module</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>2</td>
+<td>com.Tests.HomePageTests@4c60d6e9</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidatePerformance_Module()'><b>ValidatePerformance_Module</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>3</td>
+<td>com.Tests.HomePageTests@4c60d6e9</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateTime_Module()'><b>ValidateTime_Module</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>3</td>
+<td>com.Tests.HomePageTests@4c60d6e9</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateProfileLogoutFuctionality()'><b>ValidateProfileLogoutFuctionality</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>2</td>
+<td>com.Tests.HomePageTests@4c60d6e9</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidatePIM_Module()'><b>ValidatePIM_Module</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>3</td>
+<td>com.Tests.HomePageTests@4c60d6e9</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateProfileSupportFuctionality()'><b>ValidateProfileSupportFuctionality</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>3</td>
+<td>com.Tests.HomePageTests@4c60d6e9</td></tr>
+<tr>
+<td title='com.Tests.LoginTests.ValidateTitle()'><b>ValidateTitle</b><br>Test class: com.Tests.LoginTests</td>
+<td></td>
+<td>0</td>
+<td>com.Tests.LoginTests@196a42c3</td></tr>
+<tr>
+<td title='com.Tests.ForgotPasswordPageTests.ValidateResetPasswordWithValidEmail()'><b>ValidateResetPasswordWithValidEmail</b><br>Test class: com.Tests.ForgotPasswordPageTests</td>
+<td></td>
+<td>1</td>
+<td>com.Tests.ForgotPasswordPageTests@54c5a2ff</td></tr>
+<tr>
+<td title='com.Tests.LoginTests.LoginWithInvalidCredentials()'><b>LoginWithInvalidCredentials</b><br>Test class: com.Tests.LoginTests</td>
+<td></td>
+<td>2</td>
+<td>com.Tests.LoginTests@196a42c3</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateDashboard_Module()'><b>ValidateDashboard_Module</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>2</td>
+<td>com.Tests.HomePageTests@4c60d6e9</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateMaintenance_Module()'><b>ValidateMaintenance_Module</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>1</td>
+<td>com.Tests.HomePageTests@4c60d6e9</td></tr>
+<tr>
+<td title='com.Tests.LoginTests.ValidateLinkdnLinkIcon()'><b>ValidateLinkdnLinkIcon</b><br>Test class: com.Tests.LoginTests</td>
+<td></td>
+<td>2</td>
+<td>com.Tests.LoginTests@196a42c3</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateProfileChangePasswordFuctionality()'><b>ValidateProfileChangePasswordFuctionality</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>3</td>
+<td>com.Tests.HomePageTests@4c60d6e9</td></tr>
+<tr>
+<td title='com.Tests.LoginTests.LoginWithValidUsernameInvalidPassword()'><b>LoginWithValidUsernameInvalidPassword</b><br>Test class: com.Tests.LoginTests</td>
+<td></td>
+<td>2</td>
+<td>com.Tests.LoginTests@196a42c3</td></tr>
+<tr>
+<td title='com.Tests.LoginTests.ValidateLogoBanner()'><b>ValidateLogoBanner</b><br>Test class: com.Tests.LoginTests</td>
+<td></td>
+<td>1</td>
+<td>com.Tests.LoginTests@196a42c3</td></tr>
+<tr>
+<td title='com.Tests.LoginTestsExelData.LoginWithSingleExelCredential()'><b>LoginWithSingleExelCredential</b><br>Test class: com.Tests.LoginTestsExelData</td>
+<td></td>
+<td>8</td>
+<td>com.Tests.LoginTestsExelData@17f9d882</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateClaim_Module()'><b>ValidateClaim_Module</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>1</td>
+<td>com.Tests.HomePageTests@4c60d6e9</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateSearchFunctionality()'><b>ValidateSearchFunctionality</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>0</td>
+<td>com.Tests.HomePageTests@4c60d6e9</td></tr>
+<tr>
+<td title='com.Tests.LoginTests.ValidateForgotpasswordLink()'><b>ValidateForgotpasswordLink</b><br>Test class: com.Tests.LoginTests</td>
+<td></td>
+<td>1</td>
+<td>com.Tests.LoginTests@196a42c3</td></tr>
+<tr>
+<td title='com.Tests.ForgotPasswordPageTests.ValidateResetPasswordWithInvalidCharacterCredential()'><b>ValidateResetPasswordWithInvalidCharacterCredential</b><br>Test class: com.Tests.ForgotPasswordPageTests</td>
+<td></td>
+<td>1</td>
+<td>com.Tests.ForgotPasswordPageTests@54c5a2ff</td></tr>
+<tr>
+<td title='com.Tests.LoginTestsExelData.LoginCredential()'><b>LoginCredential</b><br>Test class: com.Tests.LoginTestsExelData<br>Parameters: {Username= kiran@gmail.com, Password=Admin34}</td>
+<td></td>
+<td>2</td>
+<td>com.Tests.LoginTestsExelData@17f9d882</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateHelpLinkFunctionality()'><b>ValidateHelpLinkFunctionality</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>4</td>
+<td>com.Tests.HomePageTests@4c60d6e9</td></tr>
+<tr>
+<td title='com.Tests.LoginTests.ValidateCopyRightText()'><b>ValidateCopyRightText</b><br>Test class: com.Tests.LoginTests</td>
+<td></td>
+<td>0</td>
+<td>com.Tests.LoginTests@196a42c3</td></tr>
+<tr>
+<td title='com.Tests.LoginTests.ValidateFacebookLinkIcon()'><b>ValidateFacebookLinkIcon</b><br>Test class: com.Tests.LoginTests</td>
+<td></td>
+<td>2</td>
+<td>com.Tests.LoginTests@196a42c3</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateProfileTab()'><b>ValidateProfileTab</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>0</td>
+<td>com.Tests.HomePageTests@4c60d6e9</td></tr>
+<tr>
+<td title='com.Tests.LoginTests.LoginWithBlanckUsername()'><b>LoginWithBlanckUsername</b><br>Test class: com.Tests.LoginTests</td>
+<td></td>
+<td>1</td>
+<td>com.Tests.LoginTests@196a42c3</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateBuzz_Module()'><b>ValidateBuzz_Module</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>2</td>
+<td>com.Tests.HomePageTests@4c60d6e9</td></tr>
+<tr>
+<td title='com.Tests.ForgotPasswordPageTests.ValidateForgotPasswordURL()'><b>ValidateForgotPasswordURL</b><br>Test class: com.Tests.ForgotPasswordPageTests</td>
+<td></td>
+<td>0</td>
+<td>com.Tests.ForgotPasswordPageTests@54c5a2ff</td></tr>
+</table><p>
+</body>
+</html>

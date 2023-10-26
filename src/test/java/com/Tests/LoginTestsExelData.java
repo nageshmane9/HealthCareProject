@@ -23,16 +23,15 @@ public class LoginTestsExelData   extends Base
 {
      
    LoginPage login;
-   SoftAssert soft;
+   SoftAssert soft = new SoftAssert();
    
 	@BeforeMethod
 	public void SetUp(Method m) throws IOException 
 	{
 		
 		LaunchTheWeb();
-		soft = new SoftAssert();
 		login= new LoginPage();
-		System.out.println("***TestName***"+m.getName());
+	System.out.println("***TestName***"+m.getName());
 		
 	}
 	
