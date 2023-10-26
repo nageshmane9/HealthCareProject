@@ -1,5 +1,6 @@
 package com.utilities;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -11,11 +12,15 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.poi.EncryptedDocumentException;
 
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -53,46 +58,65 @@ public class Utility extends Base
 		}		
 	}
 	
-	public static void getAllData(Sheet sh) throws IOException
+	public static HashMap<String,String> getAllData(Sheet sh) throws IOException
 	{
+		int rowCount=sh.getLastRowNum();
 		
-		HashMap<Object,Object> map = new HashMap();
+		HashMap<String,String> map = new HashMap();
 		
-		for(int i=0;i<=sh.getLastRowNum();i++)
+		Object[][] dataprovider = new Object[rowCount][2];
+		
+		for(int i=0;i<=rowCount;i++)
 		{
 			int cellNum = sh.getRow(i).getLastCellNum();
-			
-				Object a=sh.getRow(i).getCell(0).getStringCellValue();
-				Object b=sh.getRow(i).getCell(1).getStringCellValue();
+			for(int j=0;j<cellNum;j++)
+			{
 				
-				map.put(a, b);
-			
-		}
-		System.out.println(map);
-		
-		for(Map.Entry e: map.entrySet())
-		{
-			
-			System.out.println(e.getKey()+" "+e.getValue());
+				map.put(sh.getRow(i).getCell(j).getStringCellValue(),sh.getRow(i).getCell(j).getStringCellValue());
+			}
 		}
 		
+		return map;
 		
-		
-		/*
-		// By using Iterator
-		 Iterator<Entry<String,String> > iterator= hm.entrySet().iterator();
-	        
-	        while(iterator.hasNext())
-	        {
-	        	Map.Entry<String,String> e1=(Map.Entry<String, String>)iterator.next();
-	        	
-	        	System.out.println(e1.getKey()+" "+e1.getValue());
-	        }
-	        
-		  */
-			
 	}
 	 
+	
+	public static  Object[][] getData(Sheet sh)
+	{
+		int rowCount=sh.getLastRowNum();
+		
+		Map<String,String> finalData = new HashMap();
+		
+		Object[][] excelData = new Object[rowCount][1];  
+		
+		for(int i=0;i<rowCount;i++)
+		{
+			Map<String,String> data = new HashMap();
+			
+			int colNum=sh.getRow(i).getLastCellNum();
+			
+			for(int j=0;j<colNum;j++)
+			{
+				if(sh.getRow(i).getCell(j).getCellType().toString().equalsIgnoreCase("string"))
+				{
+					data.put(sh.getRow(0).getCell(j).getStringCellValue() , sh.getRow(i+1).getCell(j).getStringCellValue());
+				}
+				else if(sh.getRow(i).getCell(j).getCellType().toString().equalsIgnoreCase("numeric"))
+				{
+					data.put(sh.getRow(0).getCell(j).getStringCellValue() , sh.getRow(i+1).getCell(j).getStringCellValue());
+				}
+				else
+				{
+					System.out.println("Cell type not match");
+				}
+			}
+			excelData[i][0] = data;  
+			
+			data.forEach(finalData :: put);
+			
+		}
+		return excelData;
+	}
 	 
 	  public static  void WaitForVisibility( String e)
 		{
@@ -107,6 +131,14 @@ public class Utility extends Base
 		 wait.until(ExpectedConditions.alertIsPresent());
 	  }
 	 
+	  
+	  public static void getScreenshotMethod(String testname) throws IOException
+	  {
+		  
+		  File screenshotfile= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		  FileUtils.copyFile(screenshotfile, new File(projectpath+".\\src\\test\\resources\\Scrrenshots"+testname+".jpg"));
+	 
+	  }
 	 
 	
 	 

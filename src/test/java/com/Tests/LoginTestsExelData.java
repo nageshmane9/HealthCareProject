@@ -10,22 +10,27 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.base.Base;
+import com.pom.HomePage;
 import com.pom.LoginPage;
 import com.utilities.Utility;
 
 public class LoginTestsExelData   extends Base
 {
      
-LoginPage login;
-	
+   LoginPage login;
+   SoftAssert soft;
+   
 	@BeforeMethod
 	public void SetUp(Method m) throws IOException 
 	{
 		
 		LaunchTheWeb();
+		soft = new SoftAssert();
 		login= new LoginPage();
 		System.out.println("***TestName***"+m.getName());
 		
@@ -62,13 +67,34 @@ LoginPage login;
 		
 	}
 	
-    
-	@Test
-	public void LoginWithAllExelData() throws InterruptedException, IOException
+	
+	@Test(dataProvider = "logindata")
+	public void LoginCredential(Map<String,String> data)
+	{
+		login.setInputusername(data.get("Username"));
+		login.setInputpassword(data.get("Password"));
+		
+		HomePage home=login.ClickOnLoginButton();
+		
+		String actual=driver.getCurrentUrl();
+		System.out.println(actual);
+		String expected=prop.getProperty("WebUrl");
+		
+		soft.assertEquals(actual, expected);
+	
+		soft.assertAll();
+		
+	}
+	
+   
+	@DataProvider(name="logindata")
+	public Object[][] getDataFromExel() throws InterruptedException, IOException
 	{
 		Sheet sh=	Utility.getsheet("Login");
 		
-		Utility.getAllData(sh);
+	
+		Object[][] data= Utility.getData(sh);
 		
+		return data;
 	}
 }

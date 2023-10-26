@@ -24,8 +24,8 @@ public class LoginPage extends Base
 	@FindBy(xpath="//div[@class='orangehrm-login-logo']/img[@alt='orangehrm-logo']") private WebElement logo;
 	@FindBy(xpath="//p[text()='Invalid credentials']") WebElement InvalidcredentialsMessage;
 	
-	@FindBy(xpath="//span[text()='Required']") private WebElement RequiredFieldMessageOfUsername;
-	@FindBy(xpath="(//span[text()='Required'])[2]") private WebElement RequiredFieldMessageOfPassword;
+	@FindBy(xpath="//span[text()='Required'][1]") private WebElement RequiredFieldMessageOfUsername;
+	@FindBy(xpath="//span[text()='Required']") private WebElement RequiredFieldMessageOfPassword;
 	
 	
      public String getUsername()
@@ -68,6 +68,7 @@ public class LoginPage extends Base
     	return new HomePage();
      }
 
+     
      public boolean Logo()
  	{
     	 Utility.WaitForVisibility("//div[@class='orangehrm-login-logo']/img[@alt='orangehrm-logo']");
@@ -125,12 +126,11 @@ public class LoginPage extends Base
 	
 	public String RequiredErrorMessageforPassword()           // required message of password
 	{
-		if(RequiredFieldMessageOfPassword.isDisplayed())
-		{
+		String ms=RequiredFieldMessageOfPassword.getText();
+		System.out.println(ms);
 			System.out.println("Required message is displayed");
-		}
-		
-		return RequiredFieldMessageOfPassword.getText();
+	           
+		return ms;
 	}
      
 	

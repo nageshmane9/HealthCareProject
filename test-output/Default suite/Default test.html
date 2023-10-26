@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>12/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>20/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Oct 23 14:57:30 IST 2023</td>
+<td>Started on:</td><td>Thu Oct 26 15:27:41 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>265 seconds (265953 ms)</td>
+<tr><td>Total time:</td><td>269 seconds (269400 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,16 +76,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Tests.LoginTests.LoginWithBlanckPassword()'><b>LoginWithBlanckPassword</b><br>Test class: com.Tests.LoginTests</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//span[text()=&apos;Required&apos;])[2]&quot;}
-  (Session info: chrome=118.0.5993.89)
+<td title='com.Tests.HomePageTests.ValidateProfileAboutFuctionality()'><b>ValidateProfileAboutFuctionality</b><br>Test class: com.Tests.HomePageTests</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div/p[text()=&apos;OrangeHRM&apos;]&quot;}
+  (Session info: chrome=118.0.5993.117)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.14.0&apos;, revision: &apos;e5a96349ce&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e7df5745e965f77dded3c4dfd6b789c8, findElement {using=xpath, value=(//span[text()=&apos;Required&apos;])[2]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.89, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65097}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65097/devtoo..., se:cdpVersion: 118.0.5993.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e7df5745e965f77dded3c4dfd6b789c8
+Command: [cc1936802693ac4130de4c961c5f2636, findElement {using=xpath, value=//div/p[text()=&apos;OrangeHRM&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.117, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63942}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63942/devtoo..., se:cdpVersion: 118.0.5993.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cc1936802693ac4130de4c961c5f2636
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -105,8 +105,8 @@ Session ID: e7df5745e965f77dded3c4dfd6b789c8
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 	at jdk.proxy2/jdk.proxy2.$Proxy12.isDisplayed(Unknown Source)
-	at com.pom.LoginPage.RequiredErrorMessageforPassword(LoginPage.java:128)
-	at com.Tests.LoginTests.LoginWithBlanckPassword(LoginTests.java:129)
+	at com.pom.HomePage.SelectProfileTabsForValidateAbout(HomePage.java:268)
+	at com.Tests.HomePageTests.ValidateProfileAboutFuctionality(HomePageTests.java:255)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -135,16 +135,16 @@ Session ID: e7df5745e965f77dded3c4dfd6b789c8
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace691854979", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace691854979'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//span[text()=&apos;Required&apos;])[2]&quot;}
-  (Session info: chrome=118.0.5993.89)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1324451332", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1324451332'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div/p[text()=&apos;OrangeHRM&apos;]&quot;}
+  (Session info: chrome=118.0.5993.117)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.14.0&apos;, revision: &apos;e5a96349ce&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e7df5745e965f77dded3c4dfd6b789c8, findElement {using=xpath, value=(//span[text()=&apos;Required&apos;])[2]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.89, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65097}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65097/devtoo..., se:cdpVersion: 118.0.5993.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e7df5745e965f77dded3c4dfd6b789c8
+Command: [cc1936802693ac4130de4c961c5f2636, findElement {using=xpath, value=//div/p[text()=&apos;OrangeHRM&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.117, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\hp\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63942}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63942/devtoo..., se:cdpVersion: 118.0.5993.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cc1936802693ac4130de4c961c5f2636
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -164,8 +164,8 @@ Session ID: e7df5745e965f77dded3c4dfd6b789c8
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 	at jdk.proxy2/jdk.proxy2.$Proxy12.isDisplayed(Unknown Source)
-	at com.pom.LoginPage.RequiredErrorMessageforPassword(LoginPage.java:128)
-	at com.Tests.LoginTests.LoginWithBlanckPassword(LoginTests.java:129)
+	at com.pom.HomePage.SelectProfileTabsForValidateAbout(HomePage.java:268)
+	at com.Tests.HomePageTests.ValidateProfileAboutFuctionality(HomePageTests.java:255)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -196,7 +196,7 @@ Session ID: e7df5745e965f77dded3c4dfd6b789c8
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>16</td>
-<td>com.Tests.LoginTests@242b836</td></tr>
+<td>com.Tests.HomePageTests@51c668e3</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -207,65 +207,105 @@ Session ID: e7df5745e965f77dded3c4dfd6b789c8
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.Tests.LoginTests.LoginWithInvalidUsernameValidPassword()'><b>LoginWithInvalidUsernameValidPassword</b><br>Test class: com.Tests.LoginTests</td>
+<td title='com.Tests.HomePageTests.ValidateBuzz_Module()'><b>ValidateBuzz_Module</b><br>Test class: com.Tests.HomePageTests</td>
 <td></td>
 <td>2</td>
-<td>com.Tests.LoginTests@242b836</td></tr>
+<td>com.Tests.HomePageTests@51c668e3</td></tr>
 <tr>
-<td title='com.Tests.LoginTests.LoginWithBlanckCredential()'><b>LoginWithBlanckCredential</b><br>Test class: com.Tests.LoginTests</td>
-<td></td>
-<td>1</td>
-<td>com.Tests.LoginTests@242b836</td></tr>
-<tr>
-<td title='com.Tests.LoginTests.ValidateURL()'><b>ValidateURL</b><br>Test class: com.Tests.LoginTests</td>
-<td></td>
-<td>0</td>
-<td>com.Tests.LoginTests@242b836</td></tr>
-<tr>
-<td title='com.Tests.LoginTests.ValidateLogoBanner()'><b>ValidateLogoBanner</b><br>Test class: com.Tests.LoginTests</td>
-<td></td>
-<td>1</td>
-<td>com.Tests.LoginTests@242b836</td></tr>
-<tr>
-<td title='com.Tests.LoginTests.ValidateForgotpasswordLink()'><b>ValidateForgotpasswordLink</b><br>Test class: com.Tests.LoginTests</td>
-<td></td>
-<td>1</td>
-<td>com.Tests.LoginTests@242b836</td></tr>
-<tr>
-<td title='com.Tests.LoginTests.LoginWithValidCredential()'><b>LoginWithValidCredential</b><br>Test class: com.Tests.LoginTests</td>
-<td></td>
-<td>4</td>
-<td>com.Tests.LoginTests@242b836</td></tr>
-<tr>
-<td title='com.Tests.LoginTests.LoginWithBlanckUsername()'><b>LoginWithBlanckUsername</b><br>Test class: com.Tests.LoginTests</td>
-<td></td>
-<td>1</td>
-<td>com.Tests.LoginTests@242b836</td></tr>
-<tr>
-<td title='com.Tests.LoginTests.LoginWithInvalidCredentials()'><b>LoginWithInvalidCredentials</b><br>Test class: com.Tests.LoginTests</td>
-<td></td>
-<td>4</td>
-<td>com.Tests.LoginTests@242b836</td></tr>
-<tr>
-<td title='com.Tests.LoginTests.LoginWithInvalidCharacterCredentials()'><b>LoginWithInvalidCharacterCredentials</b><br>Test class: com.Tests.LoginTests</td>
+<td title='com.Tests.HomePageTests.ValidateMaintenance_Module()'><b>ValidateMaintenance_Module</b><br>Test class: com.Tests.HomePageTests</td>
 <td></td>
 <td>2</td>
-<td>com.Tests.LoginTests@242b836</td></tr>
+<td>com.Tests.HomePageTests@51c668e3</td></tr>
 <tr>
-<td title='com.Tests.LoginTests.ValidateTitle()'><b>ValidateTitle</b><br>Test class: com.Tests.LoginTests</td>
-<td></td>
-<td>0</td>
-<td>com.Tests.LoginTests@242b836</td></tr>
-<tr>
-<td title='com.Tests.LoginTests.ValidateLogo()'><b>ValidateLogo</b><br>Test class: com.Tests.LoginTests</td>
+<td title='com.Tests.HomePageTests.ValidateHelpLinkFunctionality()'><b>ValidateHelpLinkFunctionality</b><br>Test class: com.Tests.HomePageTests</td>
 <td></td>
 <td>2</td>
-<td>com.Tests.LoginTests@242b836</td></tr>
+<td>com.Tests.HomePageTests@51c668e3</td></tr>
 <tr>
-<td title='com.Tests.LoginTests.LoginWithValidUsernameInvalidPassword()'><b>LoginWithValidUsernameInvalidPassword</b><br>Test class: com.Tests.LoginTests</td>
+<td title='com.Tests.HomePageTests.ValidateClaim_Module()'><b>ValidateClaim_Module</b><br>Test class: com.Tests.HomePageTests</td>
 <td></td>
 <td>3</td>
-<td>com.Tests.LoginTests@242b836</td></tr>
+<td>com.Tests.HomePageTests@51c668e3</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidatePIM_Module()'><b>ValidatePIM_Module</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>2</td>
+<td>com.Tests.HomePageTests@51c668e3</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateProfileChangePasswordFuctionality()'><b>ValidateProfileChangePasswordFuctionality</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>1</td>
+<td>com.Tests.HomePageTests@51c668e3</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateProfileTab()'><b>ValidateProfileTab</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>1</td>
+<td>com.Tests.HomePageTests@51c668e3</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidatePerformance_Module()'><b>ValidatePerformance_Module</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>4</td>
+<td>com.Tests.HomePageTests@51c668e3</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateAdmin_Module()'><b>ValidateAdmin_Module</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>2</td>
+<td>com.Tests.HomePageTests@51c668e3</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateTime_Module()'><b>ValidateTime_Module</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>2</td>
+<td>com.Tests.HomePageTests@51c668e3</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateLogo()'><b>ValidateLogo</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>1</td>
+<td>com.Tests.HomePageTests@51c668e3</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateSearchFunctionality()'><b>ValidateSearchFunctionality</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>1</td>
+<td>com.Tests.HomePageTests@51c668e3</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateProfileLogoutFuctionality()'><b>ValidateProfileLogoutFuctionality</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>3</td>
+<td>com.Tests.HomePageTests@51c668e3</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateLeftArrow()'><b>ValidateLeftArrow</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>1</td>
+<td>com.Tests.HomePageTests@51c668e3</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateRecruitment_Module()'><b>ValidateRecruitment_Module</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>3</td>
+<td>com.Tests.HomePageTests@51c668e3</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateDirectory_Module()'><b>ValidateDirectory_Module</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>2</td>
+<td>com.Tests.HomePageTests@51c668e3</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateLeave_Module()'><b>ValidateLeave_Module</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>3</td>
+<td>com.Tests.HomePageTests@51c668e3</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateDashboard_Module()'><b>ValidateDashboard_Module</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>1</td>
+<td>com.Tests.HomePageTests@51c668e3</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateMyInfo_Module()'><b>ValidateMyInfo_Module</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>2</td>
+<td>com.Tests.HomePageTests@51c668e3</td></tr>
+<tr>
+<td title='com.Tests.HomePageTests.ValidateProfileSupportFuctionality()'><b>ValidateProfileSupportFuctionality</b><br>Test class: com.Tests.HomePageTests</td>
+<td></td>
+<td>3</td>
+<td>com.Tests.HomePageTests@51c668e3</td></tr>
 </table><p>
 </body>
 </html>

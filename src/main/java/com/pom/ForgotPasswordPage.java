@@ -14,9 +14,11 @@ public class ForgotPasswordPage extends Base
 		PageFactory.initElements(driver,this);
 	}
 	
-	@FindBy(xpath="//input[@name='username']") private WebElement username;
+	@FindBy(xpath="//input[@name='username']")  private WebElement username;
 	@FindBy(xpath="//button[text()=' Cancel ']") private WebElement cancelButton;
 	@FindBy(xpath="//button[@type='submit'][text()=' Reset Password ']") private WebElement ResetPasswordButton;
+	@FindBy(xpath="//span[text()='Required']") private WebElement RequiredMessageForUsername;
+	@FindBy(xpath="//div/h6[text()='Reset Password link sent successfully']") private WebElement ResetSMessage;
 	
 	
 	public void EnterUsername(String text)
@@ -26,17 +28,43 @@ public class ForgotPasswordPage extends Base
 		System.out.println("Entered username");
 	}
 	
-	public void ClickOnCancelButton()
+	public boolean ClickOnCancelButton()
 	{
-		cancelButton.click();
-		System.out.println("Clicked on cancel button");
+		Utility.WaitForVisibility("//button[text()=' Cancel ']");
+	 boolean ft=	cancelButton.isDisplayed() && cancelButton.isEnabled();
+		
+			cancelButton.click();
+			System.out.println("Clicked on cancel button");
+		 
+		return ft;
+	 }
+	
+	public boolean ClickonResetPasswordButton()
+	{
+		boolean ft= ResetPasswordButton.isDisplayed() && ResetPasswordButton.isEnabled();
+		        System.out.println(ft);
+			ResetPasswordButton.click();
+			System.out.println("Clicked on Reset password button");
+			return	ft;
 	}
 	
-	public void ClickonResetPassword()
+	public String RequiredMessageForUsername()
 	{
-		ResetPasswordButton.click();
-		System.out.println("Clicked on Reset password button");
+		if(RequiredMessageForUsername.isDisplayed())
+		{
+			System.out.println("Required Message is displayed");
+		}
+		return RequiredMessageForUsername.getText();
+	}
+	
+	public String ResetSuccessfulMessage()
+	{
 		
+		if(ResetSMessage.isDisplayed())
+		{
+			System.out.println("Reset password link send succefully message displayed");
+		}
+		return ResetSMessage.getText();
 	}
 	
 }

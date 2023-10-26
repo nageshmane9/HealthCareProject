@@ -7,12 +7,16 @@ import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.base.Base;
 import com.pom.LoginPage;
 
+import ListenerPKG.MyListener;
+
+@Listeners(MyListener.class)
 public class LoginTests extends Base
 {
 	
@@ -35,7 +39,6 @@ public class LoginTests extends Base
 	public void tearDown()
 	
 	{
-		driver.close();
 		driver.quit();
 	}
 	
@@ -85,7 +88,7 @@ public class LoginTests extends Base
 		
 		String ActualURL=driver.getCurrentUrl();
 		System.out.println(ActualURL);
-		String expected=prop.getProperty("ForgotPasswordLink");
+		String expected=prop.getProperty("ForgotpasswordPageURL");
 		
 		Assert.assertEquals(ActualURL, expected);
 			
@@ -93,16 +96,17 @@ public class LoginTests extends Base
 	@Test
 	public void LoginWithValidCredential() 
 	{
-		
+	    
+	      
 		login.setInputusername(login.getUsername());
 		login.setInputpassword(login.getPassword());
 		login.ClickOnLoginButton();
-		
 		
 		String actual = driver.getTitle();    System.out.println(actual);
 		String expected=prop.getProperty("Logintitle");
 		
 		Assert.assertEquals(actual,expected); 
+		
 	}
 	
 	@Test
@@ -120,13 +124,14 @@ public class LoginTests extends Base
 	}
 	
 	@Test
-	public void LoginWithBlanckPassword()                       // Failed Test Case
+	public void LoginWithBlankPassword()                       // Failed Test Case
 	{
 		login.setInputusername("Admin");
 		login.setInputpassword("");
 		login.ClickOnLoginButton();
 
 	  	String actual=login.RequiredErrorMessageforPassword();
+	  	System.out.println(actual);
 	  	String expected=prop.getProperty("RequiredErrorMessageforPassword");
 	  	System.out.println(expected);
 	  	
