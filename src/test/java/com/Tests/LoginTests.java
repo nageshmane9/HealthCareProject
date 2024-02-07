@@ -23,7 +23,7 @@ public class LoginTests extends Base
 	LoginPage login;
 	SoftAssert soft = new SoftAssert();    // soft assert
 	
-	@BeforeMethod
+	@BeforeMethod(groups = {"Sanity"})
 	public void SetUp(Method m) throws IOException 
 	{
 		LaunchTheWeb();
@@ -40,7 +40,7 @@ public class LoginTests extends Base
 	}
 	
 	
-	@Test 
+	@Test (groups = {"Sanity"})
 	public void ValidateTitle()
 	{
 		String actual = driver.getTitle();
@@ -50,7 +50,7 @@ public class LoginTests extends Base
 		Assert.assertEquals(actual,expected);
 	}
 	
-	@Test
+	@Test (groups = {"Sanity"})
 	public void ValidateLogo()
 	{
 		boolean actual =login.Logo();
@@ -87,7 +87,7 @@ public class LoginTests extends Base
 		System.out.println(ActualURL);
 		String expected=prop.getProperty("ForgotpasswordPageURL");
 		
-		Assert.assertEquals(ActualURL, expected);
+		Assert.assertEquals(ActualURL, expected);  // Hard assert
 			
 	}
 	@Test

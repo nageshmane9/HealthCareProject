@@ -55,6 +55,12 @@ public class HomePage extends Base
 		return LogoBanner.isDisplayed();
 	}
 	
+	public boolean SearchModuleIsEnabled()
+	{
+	    
+		return SearchInput.isDisplayed() && SearchInput.isEnabled();
+	}
+	
 	public void EnterSearchModule(String text)
 	{
 	    

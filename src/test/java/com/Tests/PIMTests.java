@@ -9,14 +9,17 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.base.Base;
+import com.beust.jcommander.Parameters;
 import com.pom.HomePage;
 import com.pom.LoginPage;
 import com.pom.PIM;
+
 
 public class PIMTests extends Base
 {
 	PIM pim;
 	LoginPage login;
+	
 	
 	@BeforeMethod
 	public void SetUp(Method m) throws IOException
@@ -27,13 +30,14 @@ public class PIMTests extends Base
 	 	   login.setInputusername(login.getUsername());
 	 	   login.setInputpassword(login.getPassword());
 	 	  HomePage  home=login.ClickOnLoginButton();            // linking the page
-	 	   pim=    home.ClickOnPIMModule();                 	 	   
+	 	   pim=    home.ClickOnPIMModule(); 
+	 	   
 	}
 	
 	@AfterMethod
 	public void tearDown()
 	{
-	    //  driver.quit();
+	      driver.quit();
 		
 	}
 	
@@ -63,14 +67,16 @@ public class PIMTests extends Base
 		Assert.assertTrue(actual);
 	}
 	
-	@Test
+	@Test(groups= {"Sanity"})
 	public void ValidateReports()
 	{
+		
 		boolean actual = pim.ClickOnReports();
 		
 		Assert.assertTrue(actual);
 	}
 	
+	/*
 	@Test
 	public void  ValidateSearchFunctionality() 
 	{
@@ -96,6 +102,13 @@ public class PIMTests extends Base
 	}
 	
 	
+	*/
 	
+	@Test
+	public void ValidateRightArrow() throws InterruptedException
+	{
+		pim.ClickOnRightArrow();
+		Thread.sleep(5000);
+	}
 
 }

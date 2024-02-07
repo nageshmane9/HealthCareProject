@@ -96,8 +96,7 @@ public class HomePageTests extends Base
 	    String expected=prop.getProperty("Leave_Module_URL");
 	    
 	    Assert.assertEquals(actual1, expected);
-	   
-	    
+	       
 	}
 	
 	@Test
@@ -109,8 +108,7 @@ public class HomePageTests extends Base
 	    String expected=prop.getProperty("Time_Module_URL");
 	    
 	    Assert.assertEquals(actual1, expected);
-	   
-	    
+	       
 	}
 	
 	@Test

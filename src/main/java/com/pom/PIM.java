@@ -54,7 +54,10 @@ public class PIM extends Base
 	@FindBy(xpath="//button[@type='submit']") private WebElement SaveButton;
 	@FindBy(xpath="//img[@class='employee-image']") private WebElement employeeImage;
 	
+	@FindBy(xpath="//button/i[@class='oxd-icon bi-chevron-right']") private WebElement rightArrow;
+	
    //div[@role='listbox']
+	
 	public boolean ClickOnConfigurationDropDown()
 	{
         boolean cd1=ConfigurationDropDown.isDisplayed()&& ConfigurationDropDown.isEnabled();
@@ -145,9 +148,7 @@ public class PIM extends Base
 			{
 				i.click();
 				break;
-			}
-			
-		 
+			} 
 		}
 	}
 	
@@ -165,8 +166,6 @@ public class PIM extends Base
 				i.click();
 				break;
 			}
-			
-		 
 		}
 	}
 	
@@ -228,7 +227,11 @@ public class PIM extends Base
 		}
 	}
 	
-	
+	public void ClickOnRightArrow()
+	{
+		rightArrow.click();
+		System.out.println("Clicked on right Arrow");
+	}
 	
 	
 	

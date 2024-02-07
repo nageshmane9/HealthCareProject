@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [OrageHRM]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="XmlFile(failed)">
+  <test thread-count="5" name="Four_Modules(failed)">
+    <groups>
+      <run>
+        <include name="Sanity"/>
+      </run>
+    </groups>
     <classes>
-      <class name="com.Tests.LoginTests">
+      <class name="com.Tests.PIMTests">
         <methods>
-          <include name="ValidateTwitterLinkIcon"/>
-          <include name="tearDown"/>
-          <include name="SetUp"/>
-          <include name="ValidateYouTubeLinkIcon"/>
+          <include name="ValidateReports"/>
         </methods>
-      </class> <!-- com.Tests.LoginTests -->
+      </class> <!-- com.Tests.PIMTests -->
     </classes>
-  </test> <!-- XmlFile(failed) -->
+  </test> <!-- Four_Modules(failed) -->
 </suite> <!-- Failed suite [OrageHRM] -->

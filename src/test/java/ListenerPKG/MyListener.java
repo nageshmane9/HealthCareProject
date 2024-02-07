@@ -16,6 +16,7 @@ public class MyListener implements ITestListener
 	public void onTestSuccess(ITestResult result) 
 	{
 	
+	   	
 		try 
 		{
 			Utility.getScreenshotMethod(result.getName());
